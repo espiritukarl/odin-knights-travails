@@ -1,3 +1,6 @@
+![image](https://github.com/espiritukarl/odin-knights-travails/assets/55738965/02e06441-4c8d-4aad-a1ed-91f0510d2c4f)
+
+
 # Knights Travails
 
 This project implements what I learned from the Computer Science introductory from The Odin Project
