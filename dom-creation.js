@@ -6,8 +6,6 @@ let endPos = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     const chessboard = document.querySelector('.chessboard');
-    const resultDiv = document.getElementById('result');
-    const travailButton = document.getElementById('travailButton');
     const img = document.createElement("img")
 
     buildChessboard(chessboard);
@@ -27,15 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    travailButton.addEventListener('click', () => {
-        if (!startPos || !endPos) {
-            alert('Please select both start and end positions.');
-            return;
-        }
-        const path = knightMoves(startPos, endPos);
-        resultDiv.innerHTML = `You made it in ${path.depth} moves!`;
-        highlightPath(path.path);
-    });
+    travail()
+    restart()
 });
 
 function highlightPath(path) {
@@ -59,4 +50,36 @@ function highlightPath(path) {
             }
         }
     });
+}
+
+
+function travail() {
+    const resultDiv = document.getElementById('result');
+    const travailButton = document.getElementById('travailButton');
+    travailButton.addEventListener('click', () => {
+        if (!startPos || !endPos) {
+            alert('Please select both start and end positions.');
+            return;
+        }
+        const path = knightMoves(startPos, endPos);
+        resultDiv.innerHTML = `You made it in ${path.depth} moves!`;
+        highlightPath(path.path);
+    });
+}
+
+function restart() {
+    const resultDiv = document.getElementById('result');
+    const restartButton = document.getElementById('restartButton');
+    restartButton.addEventListener('click', () => {
+        startPos = null;
+        endPos = null;
+        resultDiv.innerHTML = 'Click to place a Knight, then click to place a Target';
+
+        const squares = document.querySelectorAll('.square');
+        squares.forEach(square => {
+            square.classList.remove('highlight', 'end', 'travail-end');
+            square.innerHTML = '';
+        });
+    });
+
 }

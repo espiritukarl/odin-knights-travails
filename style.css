@@ -47,22 +47,6 @@ h1 {
     border: 1px solid rgba(0, 0, 0, 0.356);
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-
 .white {
     background-color: #f0d9b5;
 }
@@ -84,11 +68,42 @@ button:hover {
 }
 
 #result {
-    width: 300px;
-    height: 200px;
-    padding: 10px;
-    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 
+    width: 300px;
+    height: 60px;
+    padding: 10px;
+    overflow-y: auto;
+
     font-size: 1.5em;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#travailButton {
+    background-color: #4CAF50;
+}
+
+#travailButton:hover {
+    background-color: #45a049;
+}
+
+
+#restartButton {
+    background-color: rgb(255, 65, 65);
+}
+
+#restartButton:hover {
+    background-color: red;
 }
