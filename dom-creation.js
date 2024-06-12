@@ -29,30 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     restart()
 });
 
-function highlightPath(path) {
-    const squares = document.querySelectorAll('.square');
-    squares.forEach(square => square.classList.remove('highlight'));
-    const img = document.createElement("img")
-    
-    path.forEach(([x, y], index) => {
-        const square = document.querySelector(`.square[data-position="${x},${y}"]`);
-        if (square) { 
-            if (index === path.length - 1) {
-                img.src = "knight.svg"
-                img.alt = "Chess Knight"
-                square.append(img)
-                square.classList.remove("end")
-                square.classList.add("travail-end")
-            }
-            else {            
-                square.innerHTML = index
-                square.classList.add('highlight')
-            }
-        }
-    });
-}
-
-
 function travail() {
     const resultDiv = document.getElementById('result');
     const travailButton = document.getElementById('travailButton');
@@ -64,6 +40,31 @@ function travail() {
         const path = knightMoves(startPos, endPos);
         resultDiv.innerHTML = `You made it in ${path.depth} moves!`;
         highlightPath(path.path);
+    });
+}
+
+function highlightPath(path) {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach(square => square.classList.remove('highlight'));
+    const img = document.createElement("img")
+    
+    path.forEach(([x, y], index) => {
+        const square = document.querySelector(`.square[data-position="${x},${y}"]`);
+        if (square) { 
+            if (index === path.length - 1) {
+                if (!square.hasChildNodes()) {
+                    img.src = "knight.svg"
+                    img.alt = "Chess Knight"
+                    square.append(img)
+                }
+                square.classList.remove("end")
+                square.classList.add("travail-end")
+            }
+            else {            
+                square.innerHTML = index
+                square.classList.add('highlight')
+            }
+        }
     });
 }
 
