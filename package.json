@@ -1,0 +1,10 @@
+{
+    "name": "odin-knight-moves",
+    "type": "module",
+    "version": "1.0.0",
+    "main": "knightMoves.js",
+    "description": "Implement Knights Travails",
+    "scripts": {
+      "start": "node ./knightMoves.js"
+    }
+  }
