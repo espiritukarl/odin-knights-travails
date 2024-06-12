@@ -1,4 +1,5 @@
 ![image](https://github.com/espiritukarl/odin-knights-travails/assets/55738965/02e06441-4c8d-4aad-a1ed-91f0510d2c4f)
+![image](https://github.com/espiritukarl/odin-knights-travails/assets/55738965/c2bc4ce8-7531-47ef-ab4e-341637bb113d)
 
 
 # Knights Travails
