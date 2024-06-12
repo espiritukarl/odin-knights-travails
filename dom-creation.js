@@ -59,8 +59,10 @@ function highlightPath(path) {
                 }
                 square.classList.remove("end")
                 square.classList.add("travail-end")
-            }
-            else {            
+            } else if (index === 0) {
+                square.innerHTML = index
+                square.classList.add('travail-end')
+            } else {            
                 square.innerHTML = index
                 square.classList.add('highlight')
             }
