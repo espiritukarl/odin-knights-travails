@@ -16,8 +16,15 @@ export function addVectors(vec1, vec2) {
     return vec1.map((value, index) => Number(value) + Number(vec2[index]));
 }
 
-function buildBoard(size) {
-    const matrix = (rows, cols) => new Array(cols).fill(0).map(() => new Array(rows).fill(0))
-
-    return matrix(size,size)
+export function buildChessboard(chessboard) {
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            square.classList.add((i + j) % 2 === 0 ? 'white' : 'black');
+            square.dataset.position = `${i},${j}`;
+            chessboard.appendChild(square);
+        }
+    }
 }
+
