@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chessboard = document.querySelector('.chessboard');
     const resultDiv = document.getElementById('result');
     const travailButton = document.getElementById('travailButton');
+    const img = document.createElement("img")
 
     buildChessboard(chessboard);
 
@@ -17,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!startPos) {
             startPos = [x, y];
-            event.target.classList.add('start');
+            img.src = "knight.svg"
+            img.alt = "Chess Knight"
+            event.target.append(img)
         } else if (!endPos) {
             endPos = [x, y];
             event.target.classList.add('end');
@@ -38,13 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
 function highlightPath(path) {
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => square.classList.remove('highlight'));
-
+    const img = document.createElement("img")
     
     path.forEach(([x, y], index) => {
         const square = document.querySelector(`.square[data-position="${x},${y}"]`);
         if (square) { 
-            square.innerHTML = index
-            square.classList.add('highlight');
+            if (index === path.length - 1) {
+                img.src = "knight.svg"
+                img.alt = "Chess Knight"
+                square.append(img)
+                square.classList.remove("end")
+                square.classList.add("travail-end")
+            }
+            else {            
+                square.innerHTML = index
+                square.classList.add('highlight')
+            }
         }
     });
 }

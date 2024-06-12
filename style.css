@@ -71,12 +71,12 @@ button:hover {
     background-color: #b58863;
 }
 
-.start {
-    background-color: green !important;
-}
-
 .end {
     background-color: red !important;
+}
+
+.travail-end {
+    background-color: #45a049;
 }
 
 .highlight {
@@ -90,5 +90,5 @@ button:hover {
     overflow-y: auto;
     text-align: center;
 
-    font-size: 2em;
+    font-size: 1.5em;
 }
